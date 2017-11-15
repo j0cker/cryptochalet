@@ -19,7 +19,66 @@
 
 		<script src="assets/js/bootstrap.js"></script>
 		<link rel="stylesheet" href="assets/css/bootstrap.css" />
+
+		<script src="assets/js/materialize.js"></script>
+		<link rel="stylesheet" href="assets/css/materialize.css" />
 		
+				<script src="assets/js/toastr.js"></script>
+				<link rel="stylesheet" href="assets/css/toastr.css" />
+		
+
+		<script>
+			function sendContact(){
+				//alert("entro");
+				console.log("entro");
+				console.log(document.getElementById("nameContact").value);
+				console.log($("#nameContact").val());
+				//console.log($("#numberContact").val());
+				console.log($("#emailContact").val());
+				console.log($("#commentContact").val());
+
+				if($("#nameContact").val()==""){
+					toastr["error"]("Write your name", "");
+				} /*else if($("#numberContact").val()==""){
+					toastr["error"]("Write your number", "");
+
+				}  */else if($("#emailContact").val()==""){
+					toastr["error"]("Write your email", "");
+
+				}  else if($("#commentContact").val()==""){
+					toastr["error"]("Write your comments", "");
+
+				} else {
+					//ajax
+					
+					$.ajax({  url : "scripts/dao/contacto.php",
+								type : "post",
+								data : {  nameContact : $("#nameContact").val(),
+										//numberContact : $("#numberContact").val(),
+										emailContact: $("#emailContact").val(),
+										commentContact: $("#commentContact").val()
+								},
+								success : function(data) {
+									console.log("se envio");
+									var response = JSON.parse(data);
+									console.log(response);
+									if(response.success=="true"){
+									toastr["success"]("We have recieved you data. we will contact you soon.", "");
+									} else {
+									toastr["error"](response.description, "");
+									}
+								},
+								error : function(response) {
+								toastr["error"]("Error you dont have internet", "");
+								}
+					});
+					
+
+
+				}
+
+			}
+		</script>
 
 		<style>
 			.colorRosa {
@@ -45,12 +104,12 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
-							<li><a href="#intro" class="active">Invitation to join #DigitalDavos, the Blockchain Lounge & Crypto Chalets</a></li>
+							<li><a style="color: black;" href="#intro" class="active">Invitation to join #DigitalDavos, the Blockchain Lounge & Crypto Chalets</a></li>
 						</ul>
 					</nav>
 
 				<!-- Main -->
-					<div id="main">
+					<div style="box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3);" id="main">
 
 						<!-- Introduction -->
 							<section id="intro" class="main">
@@ -134,7 +193,7 @@
 											
 									</h1>
 
-									<img class="text-right" style="width: 50px; float: right;" src="images/comillas-ini.png">
+									<img class="text-right" style="width: 50px; float: right;" src="images/comillas-end.png">
 									
 									<br /><br />
 
@@ -166,8 +225,8 @@
 										</a>
 									</div>
 									<div style="margin-top: 20px;" class="col-xs-12 col-sm-6 col-md-6 col-lg-6 text-center">
-											<a href="images/part4.jpeg">
-												<img class="text-center" style="box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3); width: 300px; border-radius: 100%;" src="images/part4.jpeg" alt="" />
+											<a href="images/part5.jpeg">
+												<img class="text-center" style="box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3); width: 300px; border-radius: 100%;" src="images/part5.jpeg" alt="" />
 											</a>
 									</div>
 
@@ -217,18 +276,77 @@
 									<h2>DELEGATE PACKAGE: WEF HOTEL SECURITY BADGE, ACCOMMODATION, CATERING & LOCAL TRANSPORT</h2>
 									<p>As a new member of <b>Digital Davos</b> and the inaugural year of the <b>Blockchain Lounge</b>, this opportunity offers you and your company clear distinction and maximum exposure. It includes the following benefits:</p>
 								</header>
+								<ul style="text-align: left;">
+									<li>Participation in the inaugural #DigitalDavos group</li>
+									<li>One (1) World Economic Forum Hotel Security Badge (non-transferable)</li>
+									<li>Access to all hotel WEF sponsored events and programming</li>
+									<li>Access to the Blockchain Lounge events and programming all week</li>
+									<li>VIP invitation to the Blockchain Lounge Thursday evening cocktail party</li>
+									<li>VIP invitation to select Caspian Week blockchain events and programming</li>
+									<li>Opportunities for arranged one-to-one meetings with visiting VIP speakers and other delegates in the Blockchain Lounge</li>
+									<li>Opportunities to engage with the international press for interviews</li>
+									<li>Opportunities to engage with CNBC’s spotlight on blockchain</li>
+									<li>Prominent logo on the homepage of the Crypto Chalet website identifying company as a member and participant</li>
+									<li>Accommodation at one of the two Crypto Chalets</li>
+									<li>Local transportation to/from the Crypto Chalet and conference venues</li>
+									<li>24 hour catering by one of Switzerland’s best restaurants, The Silk Road</li>
+								</ul>
+								<p style="text-align: left;"><b>Price:</b> 4.03 BTC - 80.82 ETH - USD $25,000 
+									<br /> Please enquire and RSVP for payment details.
+									
+									<br /> <br /> <b>RSVP Deadline:</b> Nov 24th or when we are fully booked.
+									
+									<br /> <br /> Speaking and session chairmanship opportunities available but are at the organisers discretion. Have a topic in your expertise you want included?
+									
+									<br /> <br /> <b>For RSVPs, to submit programming topic ideas and/or to discuss sponsorship and bespoke attendance packages, please email: </b>
+								</p><p style="text-align: center;">
+									<br /> <br /> <b>info@cryptochalet.com</b>
+								</p>
+								<div style="margin-top: 40px;" class="row">
+										
+									<div class="col-sm-12">
+										<div class="col-md-12">
+											<div class="col-md-4 text-left">
+												Name: <font color="red">*</font>
+											</div>
+											<div class="col-md-8">
+												<input id="nameContact" value="" type="text" style="background-color: #DADADA;" class="form-control" />
+										
+											</div>
+										</div>
+										<div style="margin-top: 10px;" class="col-md-12">
+											<div class="col-md-4 text-left">
+												e-mail: <font color="red">*</font>
+											</div>
+											<div class="col-md-8">
+												<input id="emailContact" value="" type="text" style="background-color: #DADADA;" class="form-control" />
+										
+											</div>
+										</div>
+										<div style="margin-top: 10px;" class="col-md-12">
+											<div class="col-md-4 text-left">
+												Please tell us more about your credentials in the blockchain space for you to be considered: <font color="red">*</font>
+											</div>
+											<div class="col-md-8">
+												<textarea id="commentContact" value="" style="background-color: #DADADA; height: 150px;" class="form-control"></textarea>
+										
+											</div>
+										</div>
+										<div style="margin-top: 10px; margin-bottom: 10px;" class="col-md-12 text-center">
+											<button onclick="sendContact();" id="sendContact" class="btn btn-red"><i style="font-family: 'fontawesome' !important; font-size: 1em;" class="fa fa-paper-plane" aria-hidden="true"></i> SEND</button> 
+										</div>
+									</div>
+									
+								</div>
+						
 								<footer class="major">
-									<ul class="actions">
-										<li><a href="generic.html" class="button special">Get Started</a></li>
-										<li><a href="generic.html" class="button">Learn More</a></li>
-									</ul>
 								</footer>
 							</section>
 
 					</div>
 
 				<!-- Footer -->
-					<footer id="footer">
+					<footer id="footer"><!--
 						<section>
 							<h2>Aliquam sed mauris</h2>
 							<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat egestas velit, vitae tincidunt odio.</p>
@@ -253,8 +371,8 @@
 								<li><a href="#" class="icon fa-github alt"><span class="label">GitHub</span></a></li>
 								<li><a href="#" class="icon fa-dribbble alt"><span class="label">Dribbble</span></a></li>
 							</ul>
-						</section>
-						<p class="copyright">Copyright © 1999 - 2017 cryptochalet</p>
+						</section>-->
+						<p class="copyright">Copyright © 2017 cryptochalet</p>
 					</footer>
 
 			</div>
