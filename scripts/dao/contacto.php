@@ -6,7 +6,7 @@ include ''.dirname(__FILE__).'/../utils/log.php';
 include ''.dirname(__FILE__).'/../utils/sendMails.php';
 
 $nameContact =  base_de_datos_scape($conn, $_POST["nameContact"]);
-$numberContact =  base_de_datos_scape($conn, $_POST["numberContact"]);
+//$numberContact =  base_de_datos_scape($conn, $_POST["numberContact"]);
 $emailContact =  base_de_datos_scape($conn, $_POST["emailContact"]);
 $commentContact =  base_de_datos_scape($conn, $_POST["commentContact"]);
 
@@ -17,7 +17,7 @@ $obj = new stdclass();
 $obj->success = "";
 $obj->description = "";
 
-if($nameContact!="" && $numberContact!="" && $emailContact!="" && $commentContact!=""){
+if($nameContact!="" && $emailContact!="" && $commentContact!=""){
 
     $query = $conn->query("INSERT INTO contactoform (`name`,`number`,`mail`,`comments`) VALUES ('".$nameContact."','".$numberContact."','".$emailContact."','".$commentContact."')");
     if($query===true){
@@ -25,15 +25,15 @@ if($nameContact!="" && $numberContact!="" && $emailContact!="" && $commentContac
         $obj->description = "";
 
         $server  = "godaddy";
-        $asunto = "Mowisat.mx Contact Form";
+        $asunto = "Cryptochalet.co Contact Form";
         $body = "";
         $body = "".$body."Name: ".$nameContact."<br />";
-        $body = "".$body."Number: ".$numberContact."<br />";
+        //$body = "".$body."Number: ".$numberContact."<br />";
         $body = "".$body."Email: ".$emailContact."<br />";
         $body = "".$body."Comment: ".$commentContact."";
         $mailQueRecibe = "manlioelnum1@hotmail.com";
-        $from    = "hi@mowisatinvest.com";                             // mail que verá el receptor
-        $nombreQueEnvia  = "Mowisat";
+        $from    = "info@cryptochalet.co";                             // mail que verá el receptor
+        $nombreQueEnvia  = "Cryptochalet";
         
         
         $SendMail = new SendMail($server, $asunto, $body, $mailQueRecibe, $from, $nombreQueEnvia);

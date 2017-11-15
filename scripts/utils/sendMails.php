@@ -80,14 +80,19 @@ class SendMail {
       $mail->Port = 587;                                    // Puerto SMTP
       $mail->SMTPAuth = true;                               // Autenticación SMTP
       $mail->Username = 'manlioelnum1@hotmail.com';         // Usuario
-      $mail->Password = 'rh2MdhYLZFpIphC5bMl-Ew';           // Password OJO! Es confidencial
+      $mail->Password = '';           // Password OJO! Es confidencial
     } else if($this->server=="godaddy"){                              
-        $mail->Host = 'n1plcpnl0047.prod.ams1.secureserver.net';                  // Specify main and backup server
+        //$mail->Host = 'n1plcpnl0047.prod.ams1.secureserver.net';                  // Specify main and backup server
+        
+        $mail->Host = 'n3plcpnl0018.prod.ams3.secureserver.net';
+        
         //$mail->Host = 'mail.mowisat.mx';
         $mail->Port = 465;                                                       // Set the SMTP port
-        $mail->SMTPAuth = true;                                                  // Enable SMTP authentication
-        $mail->Username = 'hi@mowisat.mx';                                // SMTP username
-        $mail->Password = 'UYuyw983289rwe';                                       // SMTP password
+        $mail->SMTPAuth = true;                                   // Enable SMTP authentication
+        $mail->Username = 'info@cryptochalet.co';                                // SMTP username
+        $mail->Password = 'IGWEduf3h489iu43er';                                                  // Enable SMTP authentication
+        //$mail->Username = 'hi@mowisat.mx';                                // SMTP username
+        //$mail->Password = 'UYuyw983289rwe';                                       // SMTP password
         $mail->SMTPSecure = 'ssl';                                              // Enable encryption, 'ssl' also accepted
     }
 
