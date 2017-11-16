@@ -18,11 +18,11 @@ class SendMail {
   function __construct($server, $asunto, $body, $mailQueRecibe, $from, $nombreQueEnvia){
     /*
     $server  = "godaddy";
-    $asunto = "New User!";
-    $body = "You have a new user from Mowisatinvest.mx";
+    $asunto = "New Message!";
+    $body = "You have a new message from Cryptochalet.co";
     $mailQueRecibe = "manlioelnum1@hotmail.com";
-    $from    = "hi@mowisat.mx";                             // mail que verá el receptor
-    $nombreQueEnvia  = "Mowisat";
+    $from    = "info@cryptochalet.co";                             // mail que verá el receptor
+    $nombreQueEnvia  = "Cryptochalet";
     */
 
     $log = new LoggerPhp();
@@ -86,23 +86,22 @@ class SendMail {
 
         $log->write_log("[SendMail][sendMail] GoDaddy Server","Debug");
       
-        //$mail->Host = 'n1plcpnl0047.prod.ams1.secureserver.net';                  // Specify main and backup server
-        
         $mail->Host = 'n3plcpnl0018.prod.ams3.secureserver.net';
-        //$mail->Host = 'mail.mowisat.mx';
-        $mail->Port = 465;                                                       // Set the SMTP port
+        $mail->Port = 25;                                                       // Set the SMTP port
         $mail->SMTPAuth = true;                                   // Enable SMTP authentication
         $mail->Username = 'info@cryptochalet.co';                                // SMTP username
         $mail->Password = 'IGWEduf3h489iu43er';                                                  // Enable SMTP authentication
-        //$mail->Username = 'hi@mowisat.mx';                                // SMTP username
-        //$mail->Password = 'UYuyw983289rwe';                                       // SMTP password
-        $mail->SMTPSecure = 'ssl';                                              // Enable encryption, 'ssl' also accepted
+        //$mail->SMTPSecure = 'ssl';                                              // Enable encryption, 'ssl' also accepted
+        //$mail->SMTPDebug = 4;  //more error details
+
+        $mail->IsSMTP(); // enable SMTP
     }
 
     $mail->From = $this->from;
     $mail->FromName = $this->nombreQueEnvia;
     $mail->addAddress($this->mailDes, $this->nombreQueEnvia);
-    $mail->AddBCC('manlioelnum1@hotmail.com');                          // Agregar Destinatario
+    $mail->AddBCC('manlioelnum1@hotmail.com');                       // Agregar Destinatario
+    $mail->AddBCC('info@cryptochalet.co');                       // Agregar Destinatario
     // mail->AddAttachment("Sismo_".date("dmY").".pdf");    // Para que pongas el attachment
     $mail->IsHTML(true);                                                                                                 // Formato HTML
     $mail->Subject = ''.$this->asunto.'';
