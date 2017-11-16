@@ -19,7 +19,7 @@ $obj->description = "";
 
 if($nameContact!="" && $emailContact!="" && $commentContact!=""){
 
-    $query = $conn->query("INSERT INTO contactoform (`name`,`number`,`mail`,`comments`) VALUES ('".$nameContact."','".$numberContact."','".$emailContact."','".$commentContact."')");
+    $query = $conn->query("INSERT INTO contactoform (`name`,`mail`,`comments`) VALUES ('".$nameContact."','".$emailContact."','".$commentContact."')");
     if($query===true){
         $obj->success = "true";
         $obj->description = "";

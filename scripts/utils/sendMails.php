@@ -81,11 +81,14 @@ class SendMail {
       $mail->SMTPAuth = true;                               // Autenticación SMTP
       $mail->Username = 'manlioelnum1@hotmail.com';         // Usuario
       $mail->Password = '';           // Password OJO! Es confidencial
-    } else if($this->server=="godaddy"){                              
+    } else if($this->server=="godaddy"){    
+      
+
+        $log->write_log("[SendMail][sendMail] GoDaddy Server","Debug");
+      
         //$mail->Host = 'n1plcpnl0047.prod.ams1.secureserver.net';                  // Specify main and backup server
         
         $mail->Host = 'n3plcpnl0018.prod.ams3.secureserver.net';
-        
         //$mail->Host = 'mail.mowisat.mx';
         $mail->Port = 465;                                                       // Set the SMTP port
         $mail->SMTPAuth = true;                                   // Enable SMTP authentication
@@ -115,6 +118,7 @@ class SendMail {
     } else { 
       $log = new LoggerPhp();
       $log->write_log("[SendMail][sendMail] no success","Debug");
+      $log->write_log("[SendMail][sendMail] 'Error: ".$mail->ErrorInfo." ".$mail->Host."","Debug");
       echo 'Error: '.$mail->ErrorInfo.' '.$mail->Host.''; 
     }
     //$mail->ClearAllRecipients();                       //Limpiar Destinatarios para nuevo Desti..
