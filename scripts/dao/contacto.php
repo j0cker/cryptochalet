@@ -11,6 +11,7 @@ $titleContact =  base_de_datos_scape($conn, $_POST["titleContact"]);
 $emailContact =  base_de_datos_scape($conn, $_POST["emailContact"]);
 $commentContact =  base_de_datos_scape($conn, $_POST["commentContact"]);
 
+
 $log = new LoggerPhp();
 $log->write_log("[contacto]","Debug");
 
@@ -18,9 +19,9 @@ $obj = new stdclass();
 $obj->success = "";
 $obj->description = "";
 
-if($nameContact!="" && $emailContact!="" && $commentContact!=""){
+if($nameContact!="" && $companyContact!="" && $titleContact!="" && $emailContact!="" && $commentContact!=""){
 
-    $query = $conn->query("INSERT INTO contactoform (`name`,`mail`,`comments`) VALUES ('".$nameContact."','".$emailContact."','".$commentContact."')");
+    $query = $conn->query("INSERT INTO contactoform (`name`,`company`,`title`,`mail`,`comments`) VALUES ('".$nameContact."','".$companyContact."','".$titleContact."','".$emailContact."','".$commentContact."')");
     if($query===true){
         $obj->success = "true";
         $obj->description = "";
@@ -30,6 +31,8 @@ if($nameContact!="" && $emailContact!="" && $commentContact!=""){
         $body = "";
         $body = "".$body."Name: ".$nameContact."<br />";
         //$body = "".$body."Number: ".$numberContact."<br />";
+        $body = "".$body."Company: ".$companyContact."<br />";
+        $body = "".$body."Title: ".$titleContact."<br />";
         $body = "".$body."Email: ".$emailContact."<br />";
         $body = "".$body."Comment: ".$commentContact."";
         $mailQueRecibe = "manlioelnum1@hotmail.com";

@@ -54,6 +54,8 @@
 					$.ajax({  url : "scripts/dao/contacto.php",
 								type : "post",
 								data : {  nameContact : $("#nameContact").val(),
+											companyContact: $("#companyContact").val(),
+											titleContact: $("#titleContact").val(),
 										//numberContact : $("#numberContact").val(),
 										emailContact: $("#emailContact").val(),
 										commentContact: $("#commentContact").val()
@@ -94,17 +96,20 @@
 			<div id="wrapper">
 
 				<!-- Header -->
-					<header id="header" class="alt">
-						<span class="logo"><img style="width:250px;" src="images/logo.png" alt="" /></span>
+					<header id="header" class="alt text-center">
+						<span  class="logo">
+							<img style="width:250px;" src="images/logo.png" alt="" />
+						</span>
 						<h1>BLOCKCHAIN @ <span class="colorRosa">DAVOS</span></h1>
 						<h2>WORLD ECONOMIC FORUM 2018<br />
 							Creating a <span style="font-size: 1.5em;">Shared Future</span> in a Fractured World</h2>
+					
 					</header>
 
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
-							<li><a style="color: black;" href="#intro" class="active">Invitation to join #DigitalDavos, the Blockchain Lounge & Crypto Chalets</a></li>
+							<li><a style="color: black;" href="#intro" class="active">Invitation to join #DigitalDavos, the Blockchain Lounge & Chalets</a></li>
 						</ul>
 					</nav>
 
@@ -117,7 +122,7 @@
 
 									<div class="content">
 										<header class="major text-center">
-											<h2 class="text-center">Invitation to join #DigitalDavos, the Blockchain Lounge & Crypto Chalets</h2>
+											<h2 class="text-center">Invitation to join #DigitalDavos, the Blockchain Lounge & Chalets</h2>
 										</header>
 										<p class="text-center">
 												January 23-26, 2018    
@@ -143,8 +148,8 @@
 										</a>
 									</div>
 									<div style="margin-top: 20px;" class="col-xs-12 col-sm-6 col-md-6 col-lg-6 text-center">
-											<a href="images/part3.jpeg">
-												<img class="text-center" style="box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3); width: 300px;" src="images/part3.jpeg" alt="" />
+											<a href="images/part7.jpeg">
+												<img class="text-center" style="box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3); width: 300px;" src="images/part7.jpeg" alt="" />
 											</a>
 									</div>
 
@@ -300,11 +305,11 @@
 									  
 										<div class="card text-center">
 
-											<div style="border-bottom: 1px solid rgba(160, 160, 160, 0.2);" class="card-action">
-												<a style="color: #e91e63; margin-right: 0;" href="#">Delegate Package</a>
+											<div style="background-color: #e91e63; border-bottom: 1px solid rgba(160, 160, 160, 0.2);" class="card-action">
+													<span style="color: white; margin-right: 0;">Delegate Package</span>
 											</div>
 
-											<div class="card-content" style="text-align: left;">
+											<div class="card-content" style="background-color: #EEE; text-align: left;">
 												<ul>
 													<li>Participation in the inaugural #DigitalDavos group</li>
 													<li>One (1) World Economic Forum Hotel Security Badge (non-transferable)</li>
@@ -318,10 +323,11 @@
 												</ul>
 											</div>
 
+											<!--
 											<div class="card-action">
 												<a style="margin-right: 0;" href="#">See more</a>
 											</div>
-
+											-->
 										</div>
 
 									</div>
@@ -330,11 +336,11 @@
 										
 										<div class="card text-center">
 
-											<div style="border-bottom: 1px solid rgba(160, 160, 160, 0.2);" class="card-action">
-												<a style="color: #e91e63; margin-right: 0;" href="#">Media Package</a>
+											<div style="background-color: #e91e63; border-bottom: 1px solid rgba(160, 160, 160, 0.2);" class="card-action">
+												<span style="color: white; margin-right: 0;">Media Package</span>
 											</div>
 
-											<div class="card-content" style="text-align: left;">
+											<div class="card-content" style="background-color: #EEE; text-align: left;">
 												<ul>
 													<li>Opportunities to engage with the international press for interviews</li>
 													<li>Opportunities to engage with CNBC’s spotlight on blockchain</li>
@@ -342,9 +348,11 @@
 												</ul>
 											</div>
 
+											<!--
 											<div class="card-action">
 												<a style="margin-right: 0;" href="#">See more</a>
 											</div>
+											-->
 
 										</div>
 
@@ -354,11 +362,11 @@
 										
 										<div class="card text-center">
 
-											<div style="border-bottom: 1px solid rgba(160, 160, 160, 0.2);" class="card-action">
-												<a style="color: #e91e63; margin-right: 0;" href="#">Partnership Package</a>
+											<div style="background-color: #e91e63; border-bottom: 1px solid rgba(160, 160, 160, 0.2);" class="card-action">
+													<span style="color: white; margin-right: 0;">Partnership Package</span>
 											</div>
 
-											<div class="card-content" style="text-align: left;">
+											<div class="card-content" style="background-color: #EEE; text-align: left;">
 												<ul>
 													<li>VIP invitation to select Caspian Week blockchain events and programming</li>
 													<li>Opportunities for arranged one-to-one meetings with visiting VIP speakers</li>
@@ -367,9 +375,11 @@
 												
 											</div>
 
-											<div class="card-action"}>
+											<!--
+											<div class="card-action">
 												<a style="margin-right: 0;" href="#">See more</a>
 											</div>
+											-->
 
 										</div>
 
