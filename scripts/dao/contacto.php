@@ -6,7 +6,8 @@ include ''.dirname(__FILE__).'/../utils/log.php';
 include ''.dirname(__FILE__).'/../utils/sendMails.php';
 
 $nameContact =  base_de_datos_scape($conn, $_POST["nameContact"]);
-//$numberContact =  base_de_datos_scape($conn, $_POST["numberContact"]);
+$companyContact =  base_de_datos_scape($conn, $_POST["companyContact"]);
+$titleContact =  base_de_datos_scape($conn, $_POST["titleContact"]);
 $emailContact =  base_de_datos_scape($conn, $_POST["emailContact"]);
 $commentContact =  base_de_datos_scape($conn, $_POST["commentContact"]);
 
